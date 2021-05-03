@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class SearchBar extends Component {
   render() {
-    const { searchText, onSearchTextChange } = this.props;
+    const { searchText, onSearchTextChange, bookmarkedOnly } = this.props;
     return (
       <form data-testid="search-bar-form">
         <label data-testid="text-input-label">
@@ -13,6 +13,10 @@ class SearchBar extends Component {
             onChange={ onSearchTextChange }
             data-testid="text-input"
           />
+        </label>
+        <label data-testid="checkbox-input-label">
+          Mostrar somente favoritos
+          <input type="checkbox" checked={ bookmarkedOnly } onChange={ onSearchTextChange } />
         </label>
       </form>
     );
