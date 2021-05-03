@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar
-        searchText=""
+        searchText="sd"
         onSearchTextChange={}
         bookmarkedOnly={}
         onBookmarkedChange={}
