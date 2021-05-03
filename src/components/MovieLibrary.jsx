@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
 
 class MovieLibrary extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
-  }
+  } */
 
   render() {
     const { movies } = this.props;
@@ -16,17 +16,21 @@ class MovieLibrary extends Component {
         <h2> My awesome movie library </h2>
         <SearchBar
           searchText=""
-          onSearchTextChange={ '' }
-          bookmarkedOnly={ '' }
-          onBookmarkedChange={ '' }
+          onSearchTextChange=""
+          bookmarkedOnly=""
+          onBookmarkedChange=""
           selectedGenre=""
-          onSelectedGenreChange={ '' }
+          onSelectedGenreChange=""
         />
         <MovieList movies={ movies } />
-        {/* <AddMovie /> */}
+        <AddMovie />
       </div>
     );
   }
 }
+
+MovieLibrary.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default MovieLibrary;
