@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RowInputNumber from './my-components/RowInputNumber';
 import RowInputText from './my-components/RowInputText';
 import RowTextArea from './my-components/RowTextArea';
 
@@ -39,17 +40,7 @@ class AddMovie extends Component {
         <br />
         <RowTextArea propsAux={ ['storyline', 'storyline', storyline, this.handleChange] }>Sinopse</RowTextArea>
         <br />
-        <label htmlFor="rating" data-testid="rating-input-label">
-          Avaliação
-          <input
-            id="rating"
-            type="number"
-            name="rating"
-            value={ rating }
-            data-testid="rating-input"
-            onChange={ this.handleChange }
-          />
-        </label>
+        <RowInputNumber propsAux={ ['rating', 'rating', rating, this.handleChange] }>Avaliação</RowInputNumber>
         <br />
         <label htmlFor="genre" data-testid="genre-input-label">
           Gênero
