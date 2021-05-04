@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
+const INITIAL_STATE = {
+  subtitle: '',
+  title: '',
+  imagePath: '',
+  storyline: '',
+  rating: 0,
+  genre: 'action',
+};
 class AddMovie extends Component {
   constructor(props) {
     super(props);
-
-    const INITIAL_STATE = {
-      subtitle: '',
-      title: '',
-      imagePath: '',
-      storyline: '',
-      rating: 0,
-      genre: 'action',
-    };
 
     this.state = INITIAL_STATE;
   }
@@ -20,8 +19,13 @@ class AddMovie extends Component {
     this.setState({ [name]: value });
   }
 
-  render() {
+  reset = () => {
     const { onClick } = this.props;
+    onClick(this.state);
+    this.setState(INITIAL_STATE);
+  }
+
+  render() {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form data-testid="add-movie-form">
@@ -101,6 +105,7 @@ class AddMovie extends Component {
           </select>
         </label>
         <br />
+        <button type="button" data-testid="send-button" onClick={ this.reset }>Adicionar filme</button>
       </form>
     );
   }

@@ -8,6 +8,9 @@ class MovieLibrary extends Component {
   /* constructor(props) {
     super(props);
   } */
+  test = () => {
+    
+  }
 
   render() {
     const { movies } = this.props;
@@ -23,7 +26,7 @@ class MovieLibrary extends Component {
           onSelectedGenreChange=""
         />
         <MovieList movies={ movies } />
-        <AddMovie onClick={ this.function } />
+        <AddMovie onClick={ this.test } />
       </div>
     );
   }
