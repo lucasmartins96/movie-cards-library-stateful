@@ -11,7 +11,7 @@ class RowTextArea extends Component {
           id={ fieldId }
           name={ name }
           value={ value }
-          data-testid={ `${fieldId}-input-label` }
+          data-testid={ `${fieldId}-input` }
           onChange={ handleChange }
         />
       </label>
