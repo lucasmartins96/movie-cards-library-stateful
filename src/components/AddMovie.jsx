@@ -34,19 +34,49 @@ class AddMovie extends Component {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form data-testid="add-movie-form">
-        <RowInputText propsAux={ ['title', 'title', title, this.handleChange] }>Título</RowInputText>
+        <RowInputText
+          propsAux={ ['title', 'title', title, this.handleChange] }
+        >
+          Título
+        </RowInputText>
         <br />
-        <RowInputText propsAux={ ['subtitle', 'subtitle', subtitle, this.handleChange] }>Subtítulo</RowInputText>
+        <RowInputText
+          propsAux={ ['subtitle', 'subtitle', subtitle, this.handleChange] }
+        >
+          Subtítulo
+        </RowInputText>
         <br />
-        <RowInputText propsAux={ ['image', 'imagePath', imagePath, this.handleChange] }>Imagem</RowInputText>
+        <RowInputText
+          propsAux={ ['image', 'imagePath', imagePath, this.handleChange] }
+        >
+          Imagem
+        </RowInputText>
         <br />
-        <RowTextArea propsAux={ ['storyline', 'storyline', storyline, this.handleChange] }>Sinopse</RowTextArea>
+        <RowTextArea
+          propsAux={ ['storyline', 'storyline', storyline, this.handleChange] }
+        >
+          Sinopse
+        </RowTextArea>
         <br />
-        <RowInputNumber propsAux={ ['rating', 'rating', rating, this.handleChange] }>Avaliação</RowInputNumber>
+        <RowInputNumber
+          propsAux={ ['rating', 'rating', rating, this.handleChange] }
+        >
+          Avaliação
+        </RowInputNumber>
         <br />
-        <RowSelect propsAux={ ['genre', 'genre', genre, this.handleChange] }>Gênero</RowSelect>
+        <RowSelect
+          propsAux={ ['genre', 'genre', genre, this.handleChange] }
+        >
+          Gênero
+        </RowSelect>
         <br />
-        <button type="button" data-testid="send-button" onClick={ this.reset }>Adicionar filme</button>
+        <button
+          type="button"
+          data-testid="send-button"
+          onClick={ this.reset }
+        >
+          Adicionar filme
+        </button>
       </form>
     );
   }
