@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RowInputText from './my-components/RowInputText';
+import RowTextArea from './my-components/RowTextArea';
 
 const INITIAL_STATE = {
   subtitle: '',
@@ -36,18 +37,7 @@ class AddMovie extends Component {
         <br />
         <RowInputText propsAux={ ['image', 'imagePath', imagePath, this.handleChange] }>Imagem</RowInputText>
         <br />
-        <label htmlFor="image" data-testid="storyline-input-label">
-          Sinopse
-          <textarea
-            id="image"
-            type="text"
-            name="storyline"
-            value={ storyline }
-            data-testid="storyline-input"
-            onChange={ this.handleChange }
-          >
-          </textarea>
-        </label>
+        <RowTextArea propsAux={ ['storyline', 'storyline', storyline, this.handleChange] }>Sinopse</RowTextArea>
         <br />
         <label htmlFor="rating" data-testid="rating-input-label">
           Avaliação
