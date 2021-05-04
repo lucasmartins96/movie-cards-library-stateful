@@ -8,9 +8,7 @@ class MovieLibrary extends Component {
   /* constructor(props) {
     super(props);
   } */
-  test = () => {
-    
-  }
+  test = () => {}
 
   render() {
     const { movies } = this.props;
