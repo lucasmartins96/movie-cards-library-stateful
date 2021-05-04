@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class RowTextArea extends Component {
   render() {
-    const { propsAux: [fieldId, name,  value, handleChange], children } = this.props;
+    const { propsAux: [fieldId, name, value, handleChange], children } = this.props;
     return (
       <label htmlFor={ fieldId } data-testid={ `${fieldId}-input-label` }>
         { children }
@@ -17,4 +17,16 @@ class RowTextArea extends Component {
     );
   }
 }
+
+RowTextArea.propTypes = {
+  propsAux: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.string,
+    PropTypes.string,
+    PropTypes.func,
+  ]).isRequired,
+
+  children: PropTypes.string.isRequired,
+};
+
 export default RowTextArea;
