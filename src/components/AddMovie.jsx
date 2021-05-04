@@ -34,17 +34,7 @@ class AddMovie extends Component {
         <br />
         <RowInputText propsAux={ ['subtitle', 'subtitle', subtitle, this.handleChange] }>Subtítulo</RowInputText>
         <br />
-        <label htmlFor="image" data-testid="image-input-label">
-          Imagem
-          <input
-            id="image"
-            type="text"
-            name="imagePath"
-            value={ imagePath }
-            data-testid="image-input"
-            onChange={ this.handleChange }
-          />
-        </label>
+        <RowInputText propsAux={ ['image', 'imagePath', imagePath, this.handleChange] }>Imagem</RowInputText>
         <br />
         <label htmlFor="image" data-testid="storyline-input-label">
           Sinopse
