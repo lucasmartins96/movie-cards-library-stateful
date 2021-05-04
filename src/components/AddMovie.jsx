@@ -30,19 +30,9 @@ class AddMovie extends Component {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form data-testid="add-movie-form">
-        <RowInputText propsAux={ ['title', title, this.handleChange] }>Título</RowInputText>
+        <RowInputText propsAux={ ['title', 'title', title, this.handleChange] }>Título</RowInputText>
         <br />
-        <label htmlFor="subtitle" data-testid="subtitle-input-label">
-          Subtítulo
-          <input
-            id="subtitle"
-            type="text"
-            name="subtitle"
-            value={ subtitle }
-            data-testid="subtitle-input"
-            onChange={ this.handleChange }
-          />
-        </label>
+        <RowInputText propsAux={ ['subtitle', 'subtitle', subtitle, this.handleChange] }>Subtítulo</RowInputText>
         <br />
         <label htmlFor="image" data-testid="image-input-label">
           Imagem
