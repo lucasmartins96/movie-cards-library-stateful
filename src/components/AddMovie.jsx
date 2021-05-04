@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RowInputNumber from './my-components/RowInputNumber';
 import RowInputText from './my-components/RowInputText';
+import RowSelect from './my-components/RowSelect';
 import RowTextArea from './my-components/RowTextArea';
 
 const INITIAL_STATE = {
@@ -42,20 +43,7 @@ class AddMovie extends Component {
         <br />
         <RowInputNumber propsAux={ ['rating', 'rating', rating, this.handleChange] }>Avaliação</RowInputNumber>
         <br />
-        <label htmlFor="genre" data-testid="genre-input-label">
-          Gênero
-          <select
-            id="genre"
-            name="genre"
-            value={ genre }
-            data-testid="genre-input"
-            onChange={ this.handleChange }
-          >
-            <option value="action" data-testid="genre-option">Ação</option>
-            <option value="comedy" data-testid="genre-option">Comédia</option>
-            <option value="thriller" data-testid="genre-option">Suspense</option>
-          </select>
-        </label>
+        <RowSelect propsAux={ ['genre', 'genre', genre, this.handleChange] }>Gênero</RowSelect>
         <br />
         <button type="button" data-testid="send-button" onClick={ this.reset }>Adicionar filme</button>
       </form>
