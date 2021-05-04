@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class RowInputNumber extends Component {
   render() {
-    const { propsAux: [fieldId, name,  value, handleChange], children } = this.props;
+    const { propsAux: [fieldId, name, value, handleChange], children } = this.props;
     return (
       <label htmlFor={ fieldId } data-testid={ `${fieldId}-input-label` }>
         { children }
@@ -18,4 +19,16 @@ class RowInputNumber extends Component {
     );
   }
 }
+
+RowInputNumber.propTypes = {
+  propsAux: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.string,
+    PropTypes.string,
+    PropTypes.func,
+  ]).isRequired,
+
+  children: PropTypes.string.isRequired,
+};
+
 export default RowInputNumber;
