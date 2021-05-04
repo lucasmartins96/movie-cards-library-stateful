@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import RowInputNumber from './my-components/RowInputNumber';
 import RowInputText from './my-components/RowInputText';
 import RowSelect from './my-components/RowSelect';
@@ -50,4 +51,9 @@ class AddMovie extends Component {
     );
   }
 }
+
+AddMovie.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
 export default AddMovie;
