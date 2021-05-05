@@ -16,7 +16,11 @@ class MovieLibrary extends Component {
     };
   }
 
-  test = () => {}
+  addMovie = (newMovie) => {
+    this.setState((prevState) => (
+      { movies: prevState.movies.concat(newMovie) }
+    ));
+  }
 
   // Créditos ao instrutor Eduardo por me auxiliar na lógica dessa função
   filterAll = () => {
@@ -69,7 +73,7 @@ class MovieLibrary extends Component {
           onSelectedGenreChange={ this.onSelectedGenreChange }
         />
         <MovieList movies={ movies } />
-        <AddMovie onClick={ this.test } />
+        <AddMovie onClick={ this.addMovie } />
       </div>
     );
   }
