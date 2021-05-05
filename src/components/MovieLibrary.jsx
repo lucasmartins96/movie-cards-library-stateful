@@ -21,8 +21,8 @@ class MovieLibrary extends Component {
   // Créditos ao instrutor Eduardo por me auxiliar na lógica dessa função
   filterAll = () => {
     const { searchText, bookmarkedOnly, selectedGenre } = this.state;
-
-    const filteredMovies = this.props.movies.filter(
+    const { movies } = this.props;
+    const filteredMovies = movies.filter(
       ({ title, subtitle, storyline, bookmarked, genre }) => {
         let activeFilter = true;
         if (bookmarkedOnly) {
