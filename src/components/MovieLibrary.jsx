@@ -12,27 +12,51 @@ class MovieLibrary extends Component {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: this.props.movies,
+      movies: props.movies,
     };
   }
 
   test = () => {}
 
+  // Créditos ao instrutor Eduardo por me auxiliar na lógica dessa função
+  filterAll = () => {
+    const { searchText, bookmarkedOnly, selectedGenre } = this.state;
+
+    const filteredMovies = this.props.movies.filter(
+      ({ title, subtitle, storyline, bookmarked, genre }) => {
+        let activeFilter = true;
+        if (bookmarkedOnly) {
+          activeFilter = activeFilter && bookmarked;
+        }
+        if (selectedGenre) {
+          activeFilter = activeFilter && genre === selectedGenre;
+        }
+        if (searchText) {
+          const regex = new RegExp(searchText, 'gi');
+          activeFilter = activeFilter && (
+            regex.test(title) || regex.test(subtitle) || regex.test(storyline)
+          );
+        }
+        return activeFilter;
+      },
+    );
+    this.setState({ movies: filteredMovies });
+  }
+
   onSearchTextChange = ({ target: { value } }) => {
-    this.setState({ searchText: value });
+    this.setState({ searchText: value }, this.filterAll);
   }
 
   onBookmarkedChange = ({ target: { checked } }) => {
-    this.setState({ bookmarkedOnly: checked });
+    this.setState({ bookmarkedOnly: checked }, this.filterAll);
   }
 
   onSelectedGenreChange = ({ target: { value } }) => {
-    this.setState({ selectedGenre: value });
+    this.setState({ selectedGenre: value }, this.filterAll);
   }
 
   render() {
-    const { movies } = this.props;
-    const { searchText, bookmarkedOnly, selectedGenre } = this.state;
+    const { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
     return (
       <div>
         <h2> My awesome movie library </h2>
