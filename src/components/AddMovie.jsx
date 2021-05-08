@@ -92,7 +92,7 @@ class AddMovie extends Component {
     return (
       <div>
         <label htmlFor="rating" data-testid="rating-input-label">
-          Subtítulo
+          Avaliação
           <input
             type="number"
             id="rating"
